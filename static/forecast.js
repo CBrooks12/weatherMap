@@ -15,8 +15,10 @@ function renderChart(data){
 		axisY:{
 			includeZero: false,
 			tickLength: 0,
-			lineThickness:0,
-			valueFormatString:" " //comment this to show numeric values
+			valueFormatString:" ", //comment this to show numeric values
+			title: "°F",
+			titleFontSize: 16,
+			titleFontWeight: "bold"
 		},
 		data: [
 		{        
