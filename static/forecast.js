@@ -86,6 +86,6 @@ function getWeatherData(locName, locID, lat, lng){
 			//Math.floor(Math.random() * 20);
 		}
     	renderChart(renderPlots);
-	}, 500);
+	}, 1000);
 
 }
