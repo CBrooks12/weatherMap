@@ -1,0 +1,17 @@
+#forecast{
+    width: 85%;
+    height: 15%;
+    overflow: visible;
+    position: absolute;  
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+
+}
+
+#chart{
+	height:100%;
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.2);
+
+]

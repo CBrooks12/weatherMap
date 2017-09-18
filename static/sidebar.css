@@ -1,0 +1,30 @@
+#searchbar{
+    background-color: #fff;
+    z-index: 10;
+    background-image: url('img/searchicon.png');
+    background-position: 5% 50%; 
+    background-repeat: no-repeat;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    padding-left: 20%;
+    height: 100%;
+}
+
+#mySidebar {
+    position:absolute;
+    display:block;
+    z-index:5;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 15%;
+    overflow: visible;
+    height: 100%;
+}
+
+li{
+    position: relative;
+    background-color: #aaa;
+}
+
+li:hover{
+    background-color: #ddd;
+}
