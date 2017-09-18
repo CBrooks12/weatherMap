@@ -13,7 +13,6 @@ function initMap(){
     },
     zoom: 14
   });
-  //setLoc("Eugene, OR, United States", "ChIJGRlQrLAZwVQRTYlDSolh7Fc",getWeatherData(44.052,-123.086));
   getWeatherData("Eugene, OR, United States", "ChIJGRlQrLAZwVQRTYlDSolh7Fc",44.052,-123.086);
     var input = document.getElementById('searchbar');
     var autocomplete = new google.maps.places.Autocomplete(input);
@@ -35,8 +34,6 @@ function initMap(){
             map.setCenter(place.geometry.location);
             map.setZoom(17);  // Why 17? Because it looks good.
           }
-		  //temp = getWeatherData(place.geometry.location.lat(),place.geometry.location.lng());
-          //setLoc(document.getElementById("searchbar").value, place.place_id, temp );
 		  getWeatherData(document.getElementById("searchbar").value, place.place_id,place.geometry.location.lat(),place.geometry.location.lng());
 
 
