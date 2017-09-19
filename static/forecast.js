@@ -1,3 +1,4 @@
+//renders CanvasJS with data
 function renderChart(data){
     var chart = new CanvasJS.Chart("chart",
     {
@@ -42,6 +43,7 @@ function renderChart(data){
 chart.render();
 }
 
+//gets the last amt of days as an array of Date objects in (YYYY, MM, DD) in decending order
 function getLastDays(amt){
 	var week = [];
 	var today = new Date();
@@ -50,11 +52,10 @@ function getLastDays(amt){
 	}
 	return week;
 }
-
-function getWeatherData(locName, locID, lat, lng){
+//gets weather data from darksky and then renders its findings on the chart.
+function renderScreenInfo(locName, locID, lat, lng){
 	var days = 7;
 	var dates = getLastDays(days);
-	var dataPoints = [];
 	var renderPlots = [[],[]];
 	var count = 0;
 	for(var i = 0; i < days; i++){
@@ -63,14 +64,14 @@ function getWeatherData(locName, locID, lat, lng){
 			type: 'GET',
 			dataType: "jsonp",
 			success: function(data){
-				dataPoints.push(data);
+				//if location is new and is today, add button with current temperature
 				if((dates[0].getTime()/1000==data.currently.time)&& locName!==""){
-					console.log(locName);
 					setLoc(locName, locID ,data.currently.temperature);
 				}
 				renderPlots[0].push({x: dates[count], y: data.daily.data[0].temperatureMax, indexLabel: data.daily.data[0].temperatureMax + ""});
 				renderPlots[1].push({x: dates[count], y: data.daily.data[0].temperatureMin, indexLabel: data.daily.data[0].temperatureMin + ""});
 				count++;
+				//if return is last day, then render chart with plot points
 				if(count===days){
 					renderChart(renderPlots);
 				}
