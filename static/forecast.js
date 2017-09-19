@@ -7,10 +7,10 @@ function renderChart(data){
 		animationEnabled: true,
 		interactivityEnabled: true,
 		axisX: {
-			valueFormatString: "DDD",
+			valueFormatString: "DD DDD",
 			interval:1,
 			intervalType: "day",
-			labelFontSize: 16,
+			labelFontSize: 15,
 			labelFontWeight: "bold"
 		},
 		axisY:{
@@ -18,23 +18,23 @@ function renderChart(data){
 			tickLength: 0,
 			valueFormatString:" ", //comment this to show numeric values
 			title: "°F",
-			titleFontSize: 16,
+			titleFontSize: 15,
 			titleFontWeight: "bold",
 			margin: 0
 		},
 		data: [
 		{        
-			type: "line",
+			type: "spline",
 			lineThickness: 3,
 			indexLabelFontWeight: "bold",
-			indexLabelFontSize: 16,
+			indexLabelFontSize: 15,
 			dataPoints: data[0]
 		},
 		{        
-			type: "line",
+			type: "spline",
 			lineThickness: 3,
 			indexLabelFontWeight: "bold",
-			indexLabelFontSize: 16,
+			indexLabelFontSize: 15,
 			dataPoints: data[1]
 		},
 		]
