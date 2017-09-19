@@ -18,7 +18,8 @@ function renderChart(data){
 			valueFormatString:" ", //comment this to show numeric values
 			title: "°F",
 			titleFontSize: 16,
-			titleFontWeight: "bold"
+			titleFontWeight: "bold",
+			margin: 0
 		},
 		data: [
 		{        
